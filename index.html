@@ -78,7 +78,7 @@
         <iframe scr="${project}"></iframe>
         `;
 
-        console.log(window.location.pathname);
+        console.log(window.location.host);
 
         const new_window = window.open();
         new_window.document.writeln(html_code);
