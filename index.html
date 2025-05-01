@@ -75,10 +75,8 @@
 
     const liveDemo = function(project) {
         const html_code = `
-        <iframe scr="${project}"></iframe>
+        <iframe scr="https://${window.location.hostname}"></iframe>
         `;
-
-        console.log(window.location.hostname);
 
         const new_window = window.open();
         new_window.document.writeln(html_code);
