@@ -72,23 +72,6 @@
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
     });
-
-    const liveDemo = function(project) {
-        const html_code = `
-        <iframe scr="https://${window.location.hostname}/${project}"></iframe>
-        `;
-
-        const new_window = window.open();
-        new_window.document.writeln(html_code);
-    }
-
-    document.querySelectorAll(".liveDemo").forEach(project => {
-            project.addEventListener("click", function(){
-                const projectUrl = this.getAttribute("data-projectUrl");
-                liveDemo(projectUrl);
-            })
-        })
-
   </script>
 </body>
 </html>
