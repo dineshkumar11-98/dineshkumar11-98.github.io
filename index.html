@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresher Web Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Hi, I'm Dinesh Kumar</h1>
+    <p>A Passionate Web Developer</p>
+    <a class="btn" href="#projects">View Projects</a>
+    <a class="btn" href="#download">Download CV</a>
+    <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width: 700px; margin:auto">I am a self-taught web developer experienced in creating modern, responsive websites. I enjoy building user-friendly and accessible applications using clean and efficient code.</p>
+    <p style="text-align:center; max-width: 700px; margin:20px auto 0;"><strong>Skills:</strong> HTML, CSS, JavaScript, Php, MySQL, Git</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Nurserie Landing page</h3>
+        <p>This landing page project was built using HTML, CSS, and JavaScript with responsive design principles, developed entirely from scratch without using any frameworks or pre-made templates.</p>
+        <a href="#" data-projectUrl="./projects/Website/index.html" class="liveDemo">Live Demo</a> | <a href="https://github.com/dineshkumar11-98/dineshkumar11-98.github.io/tree/main/projects/Website" target="_blank">GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Carifer</h3>
+        <p>Recreate an existing website's landing page entirely from scratch using only HTML, CSS, and JavaScript, following responsive design principles and without relying on any frameworks or pre-made templates.</p>
+        <a href="#" data-projectUrl="./projects/Carifer_task/index.html" class="liveDemo">Live Demo</a> | <a href="https://github.com/dineshkumar11-98/dineshkumar11-98.github.io/tree/main/projects/Carifer_task" target="_blank">GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Two Trees</h3>
+        <p>Recreate an existing website's landing page entirely from scratch using only HTML, CSS, and JavaScript, following responsive design principles and without relying on any frameworks or pre-made templates.</p>
+        <a href="#" data-projectUrl="./projects/Tow_trees/index.html" class="liveDemo">Live Demo</a> | <a href="https://github.com/dineshkumar11-98/dineshkumar11-98.github.io/tree/main/projects/Tow_trees" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <h2>Download My CV</h2>
+    <p style="text-align:center; max-width: 700px; margin: auto;">
+      Interested in working with me? Download my CV to learn more about my experience and skills.
+    </p>
+    <div style="text-align:center; margin-top: 20px;">
+      <a href="cv/Dineshkumar.pdf" target="_blank" download class="btn">Download CV</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Connect with me:
+      <a href="https://github.com/dineshkumar11-98" target="_blank">GitHub</a>
+    </p>
+    <p>&copy; 2025 DineshKumar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+    });
+
+    const liveDemo = function(project) {
+        const html_code = `
+        <iframe scr="${project}"></iframe>
+        `;
+
+        console.log(window.location.pathname);
+
+        const new_window = window.open();
+        new_window.document.writeln(html_code);
+    }
+
+    document.querySelectorAll(".liveDemo").forEach(project => {
+            project.addEventListener("click", function(){
+                const projectUrl = this.getAttribute("data-projectUrl");
+                liveDemo(projectUrl);
+            })
+        })
+
+  </script>
+</body>
+</html>

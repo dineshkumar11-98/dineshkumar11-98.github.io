@@ -1,0 +1,172 @@
+:root {
+    --primary-color: #00bcd4;
+    --accent-color: #ff4081;
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --dark-bg: #222;
+    --light-text: #fff;
+    --card-bg: #fff;
+  }
+
+  [data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --dark-bg: #1f1f1f;
+    --light-text: #fff;
+    --card-bg: #1e1e1e;
+  }
+
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--light-text);
+    text-align: center;
+    padding: 80px 20px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 3rem;
+    animation: slideDown 1s ease-out;
+  }
+
+  header p {
+    margin: 10px 0 30px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--light-text);
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .btn:hover {
+    background: #e0f7fa;
+    transform: scale(1.05);
+  }
+
+  .toggle-theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid var(--light-text);
+    color: var(--light-text);
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+
+  section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    margin: 10px auto 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .project {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  }
+
+  .project h3 {
+    color: var(--primary-color);
+  }
+
+  .project a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  .contact form textarea {
+    resize: vertical;
+  }
+
+  footer {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  footer a {
+    color: var(--primary-color);
+    margin: 0 10px;
+  }
+
+  @keyframes slideDown {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  }
